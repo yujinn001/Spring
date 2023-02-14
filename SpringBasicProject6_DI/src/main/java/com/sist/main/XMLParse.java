@@ -5,14 +5,26 @@ import java.util.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-public class XMLParse extends DefaultHandler {
-	private Map map =new HashMap();
+/*
+ *   <bean id="sa" class="com.sist.main.Sawon"
+    p:sabun="1"
+    p:name="홍길동"
+    p:job="대리"
+    p:dept="개발부"
+  />
+ */
+public class XMLParse extends DefaultHandler{
+    private Map map=new HashMap();
+    
+	public Map getMap() {
+		return map;
+	}
 
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		try
 		{
-			if(qName.equals("beans"))
+			if(qName.equals("bean"))
 			{
 				String id=attributes.getValue("id");
 				String cls=attributes.getValue("class");
@@ -21,11 +33,12 @@ public class XMLParse extends DefaultHandler {
 				String job=attributes.getValue("p:job");
 				String dept=attributes.getValue("p:dept");
 				String s=attributes.getQName(3);
+				System.out.println(s);
 				Class clsName=Class.forName(cls);
 				Object obj=clsName.getDeclaredConstructor().newInstance();
-				
+				System.out.println(attributes.getLength());
 				Method[] methods=clsName.getDeclaredMethods();
-				for(Method m :methods)
+				for(Method m:methods)
 				{
 					String mName=m.getName();
 					if(mName.equalsIgnoreCase("set"+s.substring(s.indexOf(":")+1)))
@@ -37,8 +50,5 @@ public class XMLParse extends DefaultHandler {
 			}
 		}catch(Exception ex) {}
 	}
-	
-	
-	
-	
+    
 }
