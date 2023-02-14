@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
 	<util:properties id="db" location="classpath:db.properties"/>
-	<!-- 데이터 베이스 정보 설정 -->
+	<!-- 데이터 베이스 정보 설정1 -->
 	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
 	   p:driverClassName="#{db['driver']}"
 	   p:url="#{db['url']}"
