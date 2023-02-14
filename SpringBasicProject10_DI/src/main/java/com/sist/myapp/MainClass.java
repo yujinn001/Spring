@@ -19,9 +19,9 @@ public class MainClass {
 		MainClass mc=(MainClass)app.getBean("mc");
 		
 		/*StudentVO vo=new StudentVO();
-		vo.setName("홍길동");
+		vo.setName("심청이");
 		vo.setKor(70);
-		vo.setEng(80);
+		vo.setEng(88);
 		vo.setMath(78);
 		mc.dao.studentInsert(vo);
 		System.out.println("저장완료");*/

@@ -1,4 +1,5 @@
 package com.sist.dao;
+// xml을 이용해서 설정하는 법
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import java.util.*;

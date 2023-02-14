@@ -9,8 +9,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import com.sist.dao.StudentDAO;
-import com.sist.myapp.MainClass;
-
+import com.sist.myapp.MainClass2;
+// 자바 환경으로 설정하는 법
 @Configuration
 public class StudentConfig {
 	/*<bean id="mc" class="com.sist.myapp.MainClass"
@@ -18,9 +18,9 @@ public class StudentConfig {
 		/>
 	*/
 	@Bean("mc")
-	public MainClass mainClass() throws Exception
+	public MainClass2 mainClass() throws Exception
 	{
-		MainClass mc=new MainClass();
+		MainClass2 mc=new MainClass2();
 		mc.setDao(studentDAO());
 		return mc;
 	}
