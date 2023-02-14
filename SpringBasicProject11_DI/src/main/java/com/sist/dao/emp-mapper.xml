@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.emp-mapper">
+ <!-- 데이터 추가 
+  	   resultType, parameterType, id
+  	   => ? 대신 사용
+  	      #{}='', ${}=> column명 / table명
+  -->
+  <select id="empListData" resultType="EmpvO">
+    SELECT empno,ename,job
+    FROM emp
+  </select>
+  <select id="empDetailData" resultType="EmpVO" parameterType="int">
+   SELECT empno,ename,job
+   FROM emp
+   WHERE empno=#{empno}
+  </select>
+</mapper>
+<!-- 구분을 하기위해 mapper관련 파일을 만들 경우 => emp(테이블명)-mapper.xml -->

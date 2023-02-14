@@ -20,6 +20,8 @@
 	  p:configLocation="classpath:Config.xml"
 	  p:dataSource-ref="ds"
 	/>
+	
+	<!-- 이번에는 application-context.xml로 분리해서 사용안함 -->
 	<bean id="dao" class="com.sist.dao.StudentDAO"
 	  p:sqlSessionFactory-ref="ssf"
 	/>
