@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- Setting:핵심 -->
+	<!-- 데이터 베이스 정보 읽기 : BasicDataSource-->
+	<!-- AOP (예정)-->
+	<!-- 사용자 정의 클래스(예정) -->
+	<!-- MVC 한글변환 (예정) -->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:XE"
+		p:username="hr"
+		p:password="happy"
+		p:maxActive="10"
+		p:maxIdle="10"
+		p:maxWait="-1"
+	/>
+	<!-- Transaction 설정 (예정)-->
+	<!--  
+	     MyBatis : XML, ***Annotion, XML+Annotiation => 동적 쿼리
+	                              ================
+	     Spring : XML, Annotation, ***XML+Annotation, ***Java 
+	 -->
+	 
+	<!-- 마이바티스 라이브러리로 전송 SqlSessionFactoryBean-->
+	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:configLocation="classpath:Config.xml"
+		p:dataSource-ref="ds" 
+	/> <!-- 데이터 정보 가져오기 dataSource-ref -->
+	
+	<!-- Mapper를 구현해라 MapperFactoryBean-->
+	<bean id="mapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:sqlSessionFactory-ref="ssf"
+		p:mapperInterface="com.sist.mapper.SeoulMapper"
+	/> 
+	
+	<!-- SeoulDAO 전송 (구현된 매퍼를 전송) SeoulDAO-->
+	<bean id="dao" class="com.sist.dao.SeoulDAO"
+	 	p:mapper-ref="mapper"
+	/>
+	
+	<!-- MainClass로 SeoulDAO를 전송 MainClass-->
+	<bean id="mc" class="com.sist.myapp.MainClass"
+		p:dao-ref="dao"
+	/>
+	
+	
+</beans>
