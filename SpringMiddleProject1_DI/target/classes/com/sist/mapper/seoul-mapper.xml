@@ -14,7 +14,7 @@
 	
 	<select id="seoulListData" resultType="SeoulVO" parameterType="hashmap"><!-- String을 주면 값을 못받기때문에? hashmap사용 -->
 	  <include refid="select-seoul"/>
-	  from ${seoul_tbl} <!-- table/컬럼명은 $를 사용한다 -->
+	  from ${seoul_tbl} <!-- table/컬럼명은 $를 사용한다   ${seoul_tbl} 키이름 -->
 	</select>
 	<select id="seoulDetailData" resultType="SeoulVO" parameterType="hashmap">
 	  <include refid="select-seoul"/>
