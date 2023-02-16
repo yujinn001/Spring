@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- myBatis 관련 태그!! => 꼭 필수 (configuration: 가장 최상위 태그)-->
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 
+	 com.sist.dao
+	 com.sist.manager.
+	 com.sist.model
+	 com.sist.service...
+ -->
+<!-- myBatis 세팅하는 부분 -->
+<configuration>
+  <!-- VO 등록 -->
+   <typeAliases>
+      <typeAlias type="com.sist.vo.EmpVO" alias="EmpVO"/>
+   </typeAliases>
+  <!-- Mapper 등록 -->
+   <mappers>
+      <mapper resource="com/sist/mapper/emp-mapper.xml"/>
+   </mappers>
+</configuration>
