@@ -59,7 +59,7 @@ import com.sist.manager.*;
 @Component // 스프링에서 관리 요청 (객체 생성 => DI => 객체 소멸) => 메모리 할당 (DL => 자동으로 id가 생성 => mainclass)
 //@Component("mc") => 아이디를 주지 않으면 클래스이름의 첫자만 소문자로 아이디가 부여된다
 public class MainClass {
-	@Autowired
+	@Autowired //(MainClass)app.getBean("mainClass"); 와 같은 역할
 	private MovieManager mm; // 생성된 주소값을 스프링으로 부터 받아 온다
 	// 지역변수를 제어할 수 없다
 	public static void main(String[] args) {
