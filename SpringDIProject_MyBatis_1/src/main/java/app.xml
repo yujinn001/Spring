@@ -23,6 +23,7 @@
 		p:dataSource-ref="ds"
 	/>
 	<!-- DAO에 연결된 객체 설정 -->
+	<!-- setter로 들어가는 부분 -->
 	<bean id="fdao" class="com.sist.dao.FoodDAO"
 	    p:sqlSessionFactory-ref="ssf"
 	/>
