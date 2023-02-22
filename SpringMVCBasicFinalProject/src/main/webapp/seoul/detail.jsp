@@ -20,8 +20,8 @@
 </style>
 </head>
 <body>
-   <div class="container">
-      <h3 class="text-center" style="color: gray">${vo.title }</h3>
+<div class="container">
+      <h1 class="text-center" style="color: gray">${vo.title }</h1>
       <div class="row">
       <table class="table">
          <tr>
@@ -29,23 +29,19 @@
             
          </tr>
          <tr>
-            <td>${vo.type }</td>
+            <td>${vo.address }</td>
          </tr>
          <tr>
-            <td>${vo.addr }</td>
+            <td>${vo.msg }</td>
          </tr>
-         <tr>
-            <td>입장료:${vo.price }원</td>
-         </tr>
-         <tr>
-            <td>${vo.content }</td>
-         </tr>
+         
       </table>
+      <div class="text-right">
+     <input type="button" class="btn btn-xs btn-success" value="목록"  onclick="javascript:history.back()">
+   </div>
      </div>
      <div style="height: 10px"></div>
-     <div class="row">
-        <img src="${vo.info }" style="width:100%">
-     </div>
+     
      <h3>인근 맛집</h3>
      <hr>
      <div class="row">
@@ -55,16 +51,34 @@
                <a href="#">
                  <img src="${fvo.poster }" alt="Lights" style="width:200px;height: 150px">
                  <div class="caption">
-                   <p>${fvo.title }</p>
+                   <p>${fvo.name }</p>
                  </div>
                </a>
              </div>
            </div>
         </c:forEach>
      </div>
-   </div>
+   </div> 
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
