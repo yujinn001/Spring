@@ -1,0 +1,31 @@
+package com.sist.dao;
+import java.util.*;
+
+import org.apache.ibatis.annotations.Select;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sist.mapper.*;
+import com.sist.vo.JeJuLocationVO;
+@Repository
+public class JejuDAO {
+   @Autowired
+   private JejuMapper mapper;
+   
+   /* 목록(여행지)
+      @Select("select no, tktle, poster, num "
+            + "from (select no, tktle, poster, rownum as num "
+            + "from (select no, tktle, poster "
+            + "from jejuLocation order by no asc)) "
+           + "where num between #{start} and #{end}")*/
+   public List<JeJuLocationVO> jejuLocationListData(Map map)
+   {
+      return mapper.jejuLocationListData(map);
+   }
+      
+   //@Select("select ceil(count(*)/20.0 from jejuLocation")
+   public int jejuTotalPage() 
+   {
+      return mapper.jejuTotalPage();
+   }
+}
