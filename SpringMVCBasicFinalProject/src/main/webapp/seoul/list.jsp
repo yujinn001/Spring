@@ -36,7 +36,7 @@ p {
 	 <c:forEach var="vo" items="${list }">
 	   <div class="col-md-3">
 		    <div class="thumbnail">
-		      <a href="../seoul/detail.do?no=${vo.no }">
+		      <a href="../seoul/detail_before.do?no=${vo.no }">
 		        <img src="${vo.poster }" alt="Lights" style="width:280px;height:180px">
 		        <div class="caption">
 		          <p >${vo.title }</p>
@@ -62,8 +62,23 @@ p {
 		</ul>
 	  </div>
 	 </div> 
-	</div>
- </div>
+	 <div class="row">
+	  <h3>최근 방문 목록</h3>
+	  <hr>
+	  <c:forEach var="vo" items="${cList }">
+	   <div class="col-md-3">
+		    <div class="thumbnail">
+		      <a href="../seoul/detail.do?no=${vo.no }">
+		        <img src="${vo.poster }" alt="Lights" style="width:280px;height:180px">
+		        <div class="caption">
+		          <p >${vo.title }</p>
+		        </div>
+		      </a>
+		    </div>
+  		</div>
+	  </c:forEach>
+	 </div>
+</div>
 </body>
 </html>
 

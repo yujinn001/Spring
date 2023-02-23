@@ -34,11 +34,13 @@
          <tr>
             <td>${vo.msg }</td>
          </tr>
-         
+         <tr class="text-right">
+            <td>
+			<a href="list.do" class="btn btn-sm btn-primary">목록</a>
+		 	</td>
+         </tr>
       </table>
-      <div class="text-right">
-     <input type="button" class="btn btn-xs btn-success" value="목록"  onclick="javascript:history.back()">
-   </div>
+      
      </div>
      <div style="height: 10px"></div>
      
