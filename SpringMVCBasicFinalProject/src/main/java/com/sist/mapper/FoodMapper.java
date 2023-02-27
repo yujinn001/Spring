@@ -37,6 +37,23 @@ public interface FoodMapper {
 	@Select("select * from project_food "
 		  + "where fno=#{fno}")
 	public FoodVO foodDetailData(int fno);
+	
+	// 검색 : 동적 쿼리 (<if>,<choose>,<foreach>:IN ,<trim>,<set>)
+	// ({ => 스크립트 사용
+	@Select({
+		"<script>"
+		+"select fno,name,poster,num "
+		+"from (select fno,name,poster,rownum as num "
+		+"from (select fno,name,poster "
+		+"from food_location "
+		+"<if test=\"ss!='all'\"> "
+		+"where address LIKE '%'||#{ss}||'%' "
+		+"</if> "
+		+"order by fno asc)) "
+		+"where num between #{start} and #{end} "
+		+"</script>"
+	})
+	public List<FoodVO> foodFindData(Map map); 
 }
 
 

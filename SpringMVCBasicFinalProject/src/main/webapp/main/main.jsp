@@ -31,7 +31,7 @@
   		</div>
   		 <div class="col-md-4">
 		    <div class="thumbnail">
-		      <a href="/w3images/lights.jpg">
+		      <a href="../seoul/list.do">
 		        <img src="../images/seoul.jpg" alt="Lights" style="width:380px;height:350px">
 		        <div class="caption">
 		          <p>서울 여행</p>
