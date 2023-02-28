@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 결과값을 어떻게 받을지 설정 -->
+<mapper namespace="com.sist.mapper.SeoulMapper">
+    <!-- 
+         ResultSe rs=ps.exeuteQuery()
+         while(rs.next())
+         {
+            ====================
+            
+            ====================
+         }
+     -->
+	<resultMap type="com.sist.dao.SeoulVO" id="SeoulMap">
+	  <result property="no" column="no"/>
+	  <result property="title" column="title"/>
+	  <result property="address" column="address"/>
+	  <result property="poster" column="poster"/>
+	  <result property="hit" column="hit"/>
+	</resultMap>
+	<parameterMap type="hashmap" id="totalMap">
+	 <parameter property="pTotal" mode="OUT" javaType="java.lang.Integer"/>
+	</parameterMap>
+	<select id="seoulTotalPage" resultType="int" >
+	select ceil(count(*)/20.0) from seoul_location
+	</select>
+</mapper>
