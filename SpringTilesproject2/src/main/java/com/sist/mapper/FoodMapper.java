@@ -35,6 +35,25 @@ public interface FoodMapper {
    @Select("select * from food_location "
    		 + "where fno=#{fno}")
    public FoodVO foodLocationDetailData(int fno);
+   
+   // basic5.jsp 관련 매퍼
+   @Select({
+	           "<script>"
+	         + "select cno,title,poster "
+	         + "from project_category "
+	         + "where "
+	         + "<if test='no==1'>"
+	         + "cno between 1 and 12"
+	         + "</if>"
+	         + "<if test='no==2'>"
+	         + "cno between 13 and 18"
+	         + "</if>"
+	         + "<if test='no==3'>"
+	         + "cno between 19 and 30"
+	         + "</if>"
+	         + "</script>"
+   	      })
+   public List<CategoryVO> categoryVueData(Map map);
 }
 
 
