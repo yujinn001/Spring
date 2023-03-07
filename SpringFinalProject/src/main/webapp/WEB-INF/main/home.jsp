@@ -83,6 +83,11 @@
             <figcaption><a :href="'../food/food_list.do?cno='+vo.cno">{{vo.title}}</a></figcaption>
           </figure>
         </li>
+<<<<<<< HEAD
+=======
+       
+       
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
       </ul>
     </div>
     <!-- ################################################################################################ -->
@@ -104,6 +109,7 @@
     </ul>
     <!-- ################################################################################################ --> 
     <!-- / main body -->
+<<<<<<< HEAD
     <div style="height: 30px"></div>
     <h2 class="sectiontitle">최근 방문 맛집</h2>
     <div class="flexslider carousel basiccarousel btmspace-80">
@@ -115,6 +121,9 @@
         </li>
       </ul>
     </div>
+=======
+    <h2 class="sectiontitle">최근 방문 맛집</h2>
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
     <h2 class="sectiontitle">최근 방문 레시피</h2>
     <div class="clear"></div>
   </main>
@@ -123,8 +132,12 @@
   new Vue({
 	  el:'.rows',
 	  data:{
+<<<<<<< HEAD
 		  cate_list:[],
 		  cookie_list:[]
+=======
+		  cate_list:[]
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 	  },
 	  mounted:function(){
 		  let _this=this;
@@ -132,9 +145,12 @@
 			  console.log(response.data)
 			  _this.cate_list=response.data
 		  })
+<<<<<<< HEAD
 		  axios.get("http://localhost:8080/web/food/cookie_data_vue.do").then(function(response){
 			  _this.cookie_list=response.data
 		  })
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 	  }
   })
 </script>

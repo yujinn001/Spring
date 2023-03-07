@@ -7,10 +7,13 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
+<<<<<<< HEAD
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 import com.sist.vo.*;
 import com.sist.dao.*;
 @RestController
@@ -28,7 +31,10 @@ public class FoodRestController {
 			_this.cate_info=response.data ==> return 
 		})
     */
+<<<<<<< HEAD
    
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
    @GetMapping(value="food/food_main_vue.do",produces = "text/plain;charset=UTF-8")
    public String food_main_vue()
    {
@@ -44,6 +50,7 @@ public class FoodRestController {
 	   }
 	   return arr.toJSONString();
    }
+<<<<<<< HEAD
    // Cookie 전송
    @GetMapping(value="food/cookie_data_vue.do",produces = "text/plain;charset=UTF-8")
    public String food_cookie_data(HttpServletRequest request)
@@ -83,6 +90,8 @@ public class FoodRestController {
 	   
 	   return arr.toJSONString();
    }
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
    
    @GetMapping(value="food/category_info_vue.do",produces = "text/plain;charset=UTF-8")
    public String category_info_vue(int cno)
@@ -93,7 +102,10 @@ public class FoodRestController {
 	   obj.put("subject", vo.getSubject());
 	   return obj.toJSONString();
    }
+<<<<<<< HEAD
    
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
    // fno,name,poster,score,tel,address,type
    @GetMapping(value="food/food_list_vue.do",produces = "text/plain;charset=UTF-8")
    public String food_list_vue(int cno)
@@ -120,6 +132,7 @@ public class FoodRestController {
 	   return arr.toJSONString();
    }
    
+<<<<<<< HEAD
    @GetMapping(value = "food/food_detail_vue.do",produces = "text/plain;charset=UTF-8")
    public String food_detail_vue(int fno)
    {
@@ -151,6 +164,8 @@ public class FoodRestController {
 	   return obj.toJSONString();
    }
    
+=======
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 }
 
 

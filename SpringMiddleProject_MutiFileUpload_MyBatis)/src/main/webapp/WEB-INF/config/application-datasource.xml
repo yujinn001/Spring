@@ -35,7 +35,13 @@
     <!-- MyBatis 전송 -->
     <bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
       p:dataSource-ref="dataSource"
+<<<<<<< HEAD
     />
+=======
+      p:configLocation="/WEB-INF/config/Config.xml"
+    />
+    <!--p:configLocation="/WEB-INF/config/Config.xml" (쿼리문장을 xml로 사용할 때)추가 해준다  -->
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
     <!-- Mapper구현 -->
     <mybatis-spring:scan base-package="com.sist.mapper" factory-ref="ssf"/>
 </beans>

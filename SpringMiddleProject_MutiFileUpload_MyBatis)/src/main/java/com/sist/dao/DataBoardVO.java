@@ -24,4 +24,8 @@ public class DataBoardVO {
   private String name,subject,content,pwd,filename,filesize,dbday;
   private Date regdate;
   private List<MultipartFile> files;// 업로드된 파일 저장 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 }

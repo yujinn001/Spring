@@ -58,11 +58,19 @@ h1{
       <table class="table">
         <tr>
           <td class="text-left">
+<<<<<<< HEAD
+=======
+          <form method="post" action="find.do">
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
             <input type="checkbox" name="fs" value="N">이름
             <input type="checkbox" name="fs" value="S">제목
             <input type="checkbox" name="fs" value="C">내용
             <input type=text name=ss size=15 class="input-sm">
             <input type=submit value="검색" class="btn btn-sm btn-danger">
+<<<<<<< HEAD
+=======
+          </form>
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
           </td>
           <td class="text-right">
             <a href="#" class="btn btn-sm btn-info">이전</a>

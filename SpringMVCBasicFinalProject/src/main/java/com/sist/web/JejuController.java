@@ -102,6 +102,10 @@ public class JejuController {
       if(i>=0) {
          poster = poster.substring(0,poster.indexOf("^"));
          vo.setPoster(poster);
+<<<<<<< HEAD
+=======
+         
+>>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
       }
       String addr = vo.getAddr();
       String[] addrs = addr.split(" ");
