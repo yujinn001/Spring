@@ -79,6 +79,7 @@ public class BoardDAO {
 	   {
 	      String res="no";
 	      String db_pwd=mapper.boardGetPassword(no);
+	      System.out.println("");
 	      if(db_pwd.equals(pwd))
 	      {
 	         mapper.boardDelete(no);
