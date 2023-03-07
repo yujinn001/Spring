@@ -72,6 +72,7 @@ public class BoardDAO {
 			mapper.boardUpdate(vo);
 			res="yes";
 		}
+		System.out.println("");
 		return res;
 	}
 	
