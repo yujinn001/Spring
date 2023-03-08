@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller // 화면 전환
-public class BoardController {
+public class BoardFController {
 	@GetMapping("board/list.do")
 	public String board_list()
 	{

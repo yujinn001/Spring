@@ -1,10 +1,10 @@
 package com.sist.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
+
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.*;
@@ -12,14 +12,13 @@ import java.util.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
-=======
+
 
 import java.util.*;
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 import com.sist.vo.*;
 import com.sist.dao.*;
 @Controller
-public class FoodController {
+public class FoodFController {
    @Autowired
    private FoodDAO dao;
    
@@ -30,7 +29,7 @@ public class FoodController {
 	   model.addAttribute("cno", cno);
 	   return "food/food_list";
    }
-<<<<<<< HEAD
+
    //food/food_before_detail.do
    @GetMapping("food/food_before_detail.do")
    public String food_before_detail(int fno,HttpServletResponse response,RedirectAttributes ra)
@@ -51,6 +50,32 @@ public class FoodController {
 	   return "food/food_detail";
    }
    
-=======
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
+   @GetMapping("food/food_find.do")
+   public String food_find()
+   {
+	   return "food/food_find";
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

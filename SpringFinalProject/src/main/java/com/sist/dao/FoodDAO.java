@@ -1,11 +1,9 @@
 package com.sist.dao;
-import java.util.*;
+import java.util.*; 
 
 import org.apache.ibatis.annotations.Select;
-<<<<<<< HEAD
+
 import org.apache.ibatis.annotations.Update;
-=======
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -37,7 +35,7 @@ public class FoodDAO {
   {
 	  return mapper.foodListData(cno);
   }
-<<<<<<< HEAD
+
   /*@Update("update project_food set "
    		 + "hit = hit+1 "
    		 + "where fno=#{fno}")
@@ -54,6 +52,56 @@ public class FoodDAO {
    {
 	   return mapper.foodDetailData(fno);
    }
-=======
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
+   // 검색 (반복 속성이 많을 경우 VueJS로 출력)
+   //@Select("select fno,name,poster,score,num "
+   //		 + "from (select fno,name,poster,score,rownum as num "
+   //		 + "from (select fno,name,poster,score "
+   //		 + "from food_location "
+   //		 + "where address LIKE '%'||#{address}||'%' order by fno asc "
+   //		 + "where num between #{start} and #{end}")
+   public List<FoodVO> foodLocationFindData(Map map)
+   {
+	   return mapper.foodLocationFindData(map);
+   }
+   
+   // 상세보기
+   //@Select("select * from food_location "
+   //	 	 + "where fno=#{fno}")
+   public FoodVO foodLocationDetailData(int fno)
+   {
+	   return mapper.foodLocationDetailData(fno);
+   }
+   // // 총페이지
+   //@Select("select ceil(count(*)/20.0) "
+   //         + "from food_location "
+   //         + "where address like '%'||#{address}||'%'")
+   public int foodFindTotalPage(String address)
+   {
+	   return mapper.foodFindTotalPage(address);
+   }
+   // (Top-N => 인라인뷰 이용) 인기 맛집 7개 출력
+   //@Select("select fno,name,address,rownum "
+   //		 + "from (select fno,name,address "
+   //		 + "from project_food order by hit desc )"
+   //		 + "where rownum <=7")
+   public List<FoodVO> foodTop7()
+   {
+	   return mapper.foodTop7();
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,9 +20,8 @@
 <script src="../layout/scripts/jquery.backtotop.js"></script> 
 <script src="../layout/scripts/jquery.mobilemenu.js"></script> 
 <script src="../layout/scripts/jquery.flexslider-min.js"></script>
-<<<<<<< HEAD
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae12aff8e45e62ef0437d634b152c8df&libraries=services"></script>
-=======
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
+
 </body>
 </html>
