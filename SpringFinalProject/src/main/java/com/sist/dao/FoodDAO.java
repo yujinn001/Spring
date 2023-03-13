@@ -1,8 +1,7 @@
 package com.sist.dao;
-import java.util.*; 
+import java.util.*;
 
 import org.apache.ibatis.annotations.Select;
-
 import org.apache.ibatis.annotations.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -35,73 +34,74 @@ public class FoodDAO {
   {
 	  return mapper.foodListData(cno);
   }
-
-  /*@Update("update project_food set "
-   		 + "hit = hit+1 "
-   		 + "where fno=#{fno}")
+  
+   /*@Update("UPDATE project_food SET "
+		  +"hit=hit+1 "
+		  +"WHERE fno=#{fno}")
    public void foodHitIncrement(int fno);
-   // 상세보기
-   @Select("select * from project_food "
-   		 + "where fno=#{fno}")*/
-   public FoodVO foodDetailData(int fno)
-   {
+   
+   @Select("SELECT * FROM project_food "
+		  +"WHERE fno=#{fno}")
+   public FoodVO foodDetailData(int fno);*/
+    public FoodVO foodDetailData(int fno) {
 	   mapper.foodHitIncrement(fno);
 	   return mapper.foodDetailData(fno);
-   }
-   public FoodVO foodCookieDetailData(int fno)
-   {
-	   return mapper.foodDetailData(fno);
-   }
-   // 검색 (반복 속성이 많을 경우 VueJS로 출력)
-   //@Select("select fno,name,poster,score,num "
-   //		 + "from (select fno,name,poster,score,rownum as num "
-   //		 + "from (select fno,name,poster,score "
-   //		 + "from food_location "
-   //		 + "where address LIKE '%'||#{address}||'%' order by fno asc "
-   //		 + "where num between #{start} and #{end}")
-   public List<FoodVO> foodLocationFindData(Map map)
-   {
-	   return mapper.foodLocationFindData(map);
-   }
-   
-   // 상세보기
-   //@Select("select * from food_location "
-   //	 	 + "where fno=#{fno}")
-   public FoodVO foodLocationDetailData(int fno)
-   {
-	   return mapper.foodLocationDetailData(fno);
-   }
-   // // 총페이지
-   //@Select("select ceil(count(*)/20.0) "
-   //         + "from food_location "
-   //         + "where address like '%'||#{address}||'%'")
-   public int foodFindTotalPage(String address)
-   {
-	   return mapper.foodFindTotalPage(address);
-   }
-   // (Top-N => 인라인뷰 이용) 인기 맛집 7개 출력
-   //@Select("select fno,name,address,rownum "
-   //		 + "from (select fno,name,address "
-   //		 + "from project_food order by hit desc )"
-   //		 + "where rownum <=7")
-   public List<FoodVO> foodTop7()
-   {
-	   return mapper.foodTop7();
-   }
+    }
+
+	public FoodVO foodCookieDetailData(int fno) {
+		  return mapper.foodDetailData(fno);
+	}
+	
+	/*
+	 *   // 검색 
+	   @Select("SELECT fno,name,poster,score,num "
+			  +"FROM (SELECT fno,name,poster,score,rownum as num "
+			  +"FROM (SELECT fno,name,poster,score "
+			  +"FROM food_location "
+			  +"WHERE address LIKE '%'||#{address}||'%' ORDER BY fno ASC)) "
+			  +"WHERE num BETWEEN #{start} AND #{end}")
+	   public List<FoodVO> foodLocationFindData(Map map);
+	   
+	   // 상세보기 
+	   @Select("SELECT * FROM food_location "
+			  +"WHERE fno=#{fno}")
+	   public FoodVO foodLocationDetailData(int fno);
+	 */
+	public List<FoodVO> foodLocationFindData(Map map){
+		return mapper.foodLocationFindData(map);
+	}
+	public FoodVO foodLocationDetailData(int fno) {
+		return mapper.foodLocationDetailData(fno);
+	}
+	/*@Select("SELECT CEIL(COUNT(*)/20.0) "
+			  +"FROM food_location "
+			  +"WHERE address LIKE '%'||#{address}||'%'")*/
+	public int foodFindTotalPage(String address) {
+		return mapper.foodFindTotalPage(address);
+	}
+	// Top-N = 인라인뷰 이용 
+	/*@Select("SELECT fno,name,address,rownum "
+			  +"FROM (SELECT fno,name,address "
+			  +"FROM project_food ORDER BY hit DESC) "
+			  +"WHERE rownum<=7")*/
+	public List<FoodVO> foodTop7()
+	{
+		return mapper.foodTop7();
+	}
+	
+	/*@Select("SELECT DISTINCT name FROM food_location "
+			  +"WHERE length(name)>1 OR name!='라구'")*/
+	public List<String> foodGetNameData()
+	{
+		return mapper.foodGetNameData();
+	}
+	
+	/*@Select("SELECT fno,name,poster,score,rownum "
+			  +"FROM (SELECT fno,name,poster,score "
+			  +"FROM food_location ORDER BY fno ASC))"
+			  +"WHERE name=#{name} AND rownum=1")*/
+	public FoodVO foodInfoData(String name)
+	{
+		return mapper.foodInfoData(name);
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

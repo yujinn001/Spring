@@ -48,7 +48,21 @@
       <li><a class="drop" href="#">맛집</a>
         <ul>
           <li><a href="../food/food_find.do">지역별 찾기</a></li>
-          <li><a href="../food/food_recommand.do">맛집 추천</a></li>
+          <li><a href="../food/recommand.do">맛집 추천</a></li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">제주</a>
+        <ul>
+          <li><a href="../jeju/location.do">행사&관광</a></li>
+          <li><a href="../jeju/food.do">제주맛집</a></li>
+        </ul>
+      </li>
+      <li><a class="drop" href="#">스토어</a>
+        <ul>
+          <li><a href="../food/food_find.do">전체</a></li>
+          <li><a href="../food/food_recommand.do">특가</a></li>
+          <li><a href="../food/food_recommand.do">베스트</a></li>
+          <li><a href="../food/food_recommand.do">신상</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">레시피</a>
@@ -60,8 +74,8 @@
       </li>
       <li><a class="drop" href="#">커뮤니티</a>
         <ul>
-			<li><a href="../board/list.do">게시판</a></li>
-			<li><a href="../pages/full-width.html">공지사항</a></li>
+          <li><a href="../board/list.do">게시판</a></li>
+          <li><a href="../pages/full-width.html">공지사항</a></li>
         </ul>
       </li>
       <c:if test="${sessionScope.id!=null }">
@@ -93,7 +107,7 @@
 			  }
 			  
 			  let _this=this
-			  axios.get('http://localhost:8080/web/member/login_vue.do',{
+			  axios.get('http://localhost/web/member/login_vue.do',{
 				  params:{
 					  id:this.id,
 					  pwd:this.pwd
@@ -121,7 +135,7 @@
 			  })
 		  },
 		  logout:function(){
-			  axios.get('http://localhost:8080/web/member/logout_vue.do').then(function(response){
+			  axios.get('http://localhost/web/member/logout_vue.do').then(function(response){
 				  location.href="../main/main.do";
 			  })
 		  }
