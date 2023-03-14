@@ -102,8 +102,7 @@ public class DataBoardDAO {
 	  {
 		  mapper.databoardUpdate(vo);
 	  }
-<<<<<<< HEAD
-=======
+
 	  //public List<DataBoardVO> databoardFindData(Map map);
 	  public List<DataBoardVO> databoardFindData(Map map)
 	  {
@@ -115,7 +114,6 @@ public class DataBoardDAO {
 	  {
 		  return mapper.FindCount(map);
 	  }
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 }
 
 

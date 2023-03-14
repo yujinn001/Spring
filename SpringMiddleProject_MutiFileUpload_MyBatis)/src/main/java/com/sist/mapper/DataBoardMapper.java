@@ -66,8 +66,7 @@ public interface DataBoardMapper {
    		 + "name=#{name},subject=#{subject},content=#{content} "
    		 + "where no=#{no}")
    public void databoardUpdate(DataBoardVO vo);
-<<<<<<< HEAD
-=======
+
    
    //<select id="databoardFindData" resultType="DataBoardVO" parameterType="hashmap">
    public List<DataBoardVO> databoardFindData(Map map);
@@ -94,9 +93,7 @@ public interface DataBoardMapper {
        +"</foreach> "
        +"</trim> "
        +"</script> "})
-public int FindCount(Map map);
-
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
+   public int FindCount(Map map);
 }
 
 

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.sist.mapper.*;
 import com.sist.vo.*;
 
+import jdk.internal.module.ModuleLoaderMap.Mapper;
+
 @Service
 public class RecipeService {
 	@Autowired
@@ -67,4 +69,25 @@ public class RecipeService {
 		return cMapper.chefMakeRecipeData(chef);
 	}
 	
+	//@Select("select count(*) from recipeDetail "
+	//  + "where no=#{no}")
+	public int recipeDetailCount(int no)
+	{
+		return rMapper.recipeDetailCount(no);
+	}
+	//@Select("select * from recipeDetail "
+	//  + "where no=#{no}")
+	public RecipeDetailVO recipeDetailData(int no)
+	{
+		return rMapper.recipeDetailData(no);
+	}
+	//@Select("select no,goods_name,goods_price,goods_poster,rownum "
+	//		  + "from (select no,goods_name,goods_price,goods_poster "
+	//		  + "from goods_all like '%'||#{goods_name}||'%'"
+	//		  + "order by to_number(replace(replace(goods_price,',',''),'원','')) asc) "
+	//		  + "where rownum <=3 ")
+	public List<GoodsVO> goodsListData(String goods_name)
+	{
+		return rMapper.goodsListData(goods_name);
+	}
 }

@@ -151,8 +151,7 @@ public class DataBoardController {
 	   // 원래는 redirect:detail.do+vo.getno가 돼야 하는 데
 	   // RedirectAttributes를 이용해서 넣어줌
    }
-<<<<<<< HEAD
-=======
+
    // <input type="checkbox" name="fs" value="C">내용
    //<input type=text name=ss size=15 class="input-sm">
    @PostMapping("databoard/find.do")
@@ -170,8 +169,6 @@ public class DataBoardController {
 	   return "databoard/find";
    }
    
-   
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
 }
 
 
@@ -179,8 +176,6 @@ public class DataBoardController {
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -188,18 +183,3 @@ public class DataBoardController {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 8f26dca6d86dd67c191bcdeb5e01ce0cc138fe35
