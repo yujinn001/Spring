@@ -54,7 +54,7 @@ public interface FoodMapper {
 		  +"WHERE rownum<=7")
    public List<FoodVO> foodTop7();
    
-   // 맛집명을 가지고 온다 
+   // 맛집명을 가지고 온다 (추천)
    @Select("SELECT DISTINCT name FROM food_location "
 		  +"WHERE length(name)>1 AND name!='라구'")
    public List<String> foodGetNameData();

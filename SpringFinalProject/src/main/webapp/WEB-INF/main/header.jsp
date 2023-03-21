@@ -19,14 +19,20 @@
     <div class="fl_right">
      <c:if test="${sessionScope.id==null }">
       <ul class="inline">
-        <li>ID:<input type=text name="id" size=15 class="input-sm" v-model="id" ref="id"></li>
+        <li>ID:<input type=text name="id" size=15 class="input-sm"  ref="id" value="${id }"></li>
         <li>PW:<input type=password name=pwd class="input-sm" v-model="pwd" ref="pwd"></li>
+        <c:if test="${ck==true }">
+         <li>ID 저장:<input type="checkbox" ref="ck"  checked></li>
+        </c:if>
+        <c:if test="${ck==false }">
+         <li>ID 저장:<input type="checkbox" ref="ck"></li>
+        </c:if>
         <li><input type=button value="로그인" class="btn btn-sm btn-danger" v-on:click="login()"></li>
       </ul>
      </c:if>
      <c:if test="${sessionScope.id!=null }">
       <ul class="inline">
-        <li>${sessionScope.name }님 로그인 중입니다</li>
+        <li>${sessionScope.name }님(${sessionScope.admin=='y'?'관리자':'일반 사용자' }) 로그인 중입니다</li>
         <li><input type=button value="로그아웃" class="btn btn-sm btn-success" v-on:click="logout()"></li>
       </ul>
      </c:if>
@@ -40,7 +46,7 @@
       <li class="active"><a href="../main/main.do">Home</a></li>
       <li><a class="drop" href="#">회원</a>
         <ul>
-          <li><a href="../pages/gallery.html">회원가입</a></li>
+          <li><a href="../member/join.do">회원가입</a></li>
           <li><a href="../pages/full-width.html">아이디찾기</a></li>
           <li><a href="../pages/sidebar-left.html">비밀번호찾기</a></li>
         </ul>
@@ -91,10 +97,14 @@
 	  data:{
 		  id:'',
 		  pwd:'',
-		  msg:''
+		  msg:'',
+		  ck:false
 	  },
 	  methods:{
 		  login:function(){
+			  //alert("ck="+this.ck)
+			  this.id=this.$refs.id.value; // v-model을 쿠키저장하려고 뺌 그래서 이렇게 선언함
+			  this.ck=this.$refs.ck.checked;
 			  if(this.id.trim()=="")
 			  {
 				  this.$refs.id.focus();
@@ -107,10 +117,11 @@
 			  }
 			  
 			  let _this=this
-			  axios.get('http://localhost/web/member/login_vue.do',{
+			  axios.get('http://localhost:8080/web/member/login_vue.do',{
 				  params:{
 					  id:this.id,
-					  pwd:this.pwd
+					  pwd:this.pwd,
+					  ck:this.ck
 				  }
 			  }).then(function(response){
 				  let res=response.data.trim();
@@ -118,15 +129,15 @@
 				  {
 					  
 					  alert("아이디가 존재하지 않습니다!!")
-					  id='';
-					  pwd='';
-					  this.$refs.id.focus();
+					  _this.id='';
+					  _this.pwd='';
+					  _this.$refs.id.focus();
 				  }
 				  else if(res==='NOPWD')
 				  {
 					  alert("비밀번호가 틀립니다!!")
-					  pwd='';
-					  this.$refs.pwd.focus();
+					  _this.pwd='';
+					  _this.$refs.pwd.focus();
 				  }
 				  else
 				  {
@@ -135,7 +146,7 @@
 			  })
 		  },
 		  logout:function(){
-			  axios.get('http://localhost/web/member/logout_vue.do').then(function(response){
+			  axios.get('http://localhost:8080/web/member/logout_vue.do').then(function(response){
 				  location.href="../main/main.do";
 			  })
 		  }

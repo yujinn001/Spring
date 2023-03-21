@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,6 +71,43 @@
        </td>
       </tr>
      </table>
+     <div style="height: 20px"></div>
+     <div class="row" id="food_reply">
+       <table class="table">
+        <tr>
+         <td>
+          <table class="table" v-for="r in reply_list">
+            <tr>
+              <td class="text-left">
+                <!-- 댓글 올라오는 부분 -->
+                ◑{{r.name}}({{r.dbday}})
+              </td>
+              <td class="text-right">
+                <span v-if="r.id===ssessionId">
+                  <input type="button" class="btn btn-xs btn-danger" value="수정">
+                  <input type="button" class="btn btn-xs btn-success" value="삭제">
+                </span>
+              </td>
+            </tr> 
+            <tr>
+             <td colspan="2" valign="top" class="text-left"><pre style="white-space: pre-wrap;background-color: white;border: none"></pre></td>
+            </tr>          
+          </table>
+         </td>
+        </tr>
+       </table>
+       <c:if test="${sessionScope.id!=null }">
+	      <table class="table">
+	       <tr>
+	        <td>
+	         <textarea rows="5" cols="55" style="float:left" v-model="msg"></textarea>
+	         <input type="button" value="댓글 쓰기" class="btn btn-sm btn-primary"
+	          style="height:105px" v-on:click="write()">
+	        </td>
+	       </tr>
+	      </table>
+        </c:if>
+     </div>
     </div>
     <div class="one_third">
      <div id="map" style="width: 100%;height:350px"></div>
@@ -77,6 +115,32 @@
   </main>
 </div>
 <script>
+// 댓글
+ new Vue({
+	el:'#food_reply',
+	data:{
+		fno:${fno},
+		reply_list:[],
+		sessionId:'',
+		type:10, // type이 10번이고 fno(맛집 번호)인 경우
+		msg:''
+	},
+	mounted:function(){
+		let _this=this;
+		axios.get('http://localhost:8080/web/reply/reply_list.do',{
+			params:{
+				fno:this.fno,
+				type:this.type
+			}
+		}).then(function(response){
+			_this.reply_list=response.data;
+		})
+	},
+	method:{
+		
+	}
+ })
+ 
  new Vue({
 	 el:'.rows',
 	 data:{

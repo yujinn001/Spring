@@ -109,29 +109,34 @@ public class RecipeRestController {
 		return arr.toJSONString();
 	}
 	
-	@GetMapping(value = "recipe/goods_price_vue.do",produces = "text/plain;charset=utf-8") 
-	public String goods_price_vue(String goods_name)
-	{
-		String name=goods_name.replace("[^가-힣]", "");
-		List<GoodsVO> list=service.goodsListData(name);
-		JSONArray arr= new JSONArray();
-		for(GoodsVO vo:list)
-		{
-			JSONObject obj=new JSONObject();
-			obj.put("no", vo.getNo());
-			obj.put("goods_poster", vo.getGoods_poster());
-			String gname=vo.getGoods_name();
-			if(gname.length()>10)
-			{
-				gname=gname.substring(0,10)+"...";
-			}
-			obj.put("goods_name", gname);
-			obj.put("goods_price", vo.getGoods_price());
-			
-			arr.add(obj);
-		}
-		return arr.toJSONString();
-	}
+	 @GetMapping(value="recipe/goods_price_vue.do",produces = "text/plain;charset=UTF-8")
+	  public String goods_price_vue(String goods_name)
+	  {
+		  // [0-9A-Za-z]
+		  String name=goods_name.replaceAll("[0-9A-Za-z] ","");
+		  name=name.replace(" ", "|");
+		  name=name.replace("||", "|");
+		  System.out.println(name);
+		  List<GoodsVO> list=service.goodsListData(name);
+		  JSONArray arr=new JSONArray();
+		  for(GoodsVO vo:list)
+		  {
+			  JSONObject obj=new JSONObject();
+			  obj.put("no", vo.getNo());
+			  obj.put("goods_poster", vo.getGoods_poster());
+			  String gname=vo.getGoods_name();
+				/*
+				 * if(gname.length()>10) { gname=gname.substring(0,10)+"...";
+				 * 
+				 * }
+				 */
+			  obj.put("goods_name", gname);
+			  obj.put("goods_price", vo.getGoods_price());
+			  
+			  arr.add(obj);
+		  }
+		  return arr.toJSONString();
+	  }
 }
 
 

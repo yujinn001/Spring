@@ -66,7 +66,7 @@ public class RecommandRestController {
     public String recommand_result(String ss)
     {
     	String json=nrd.newsData(ss);
-    	List<String> list=mgr.jsonParser(json);
+    	List<String> list=mgr.jsonParser(json); // 네이버 추천 데이터
 		/*
 		 * for(String s:list) { System.out.println(s); }
 		 */
