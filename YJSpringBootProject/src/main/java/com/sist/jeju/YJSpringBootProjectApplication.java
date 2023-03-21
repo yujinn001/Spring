@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
-@ComponentScan(basePackages = {"com.sist.jeju.controller","com.sist.jeju.dao","com.sist.jeju.entity"})
+@ComponentScan(basePackages = {"com.sist.jeju.controller","com.sist.jeju.dao","com.sist.jeju.entity","com.sist.jeju.rest"})
 @SpringBootApplication
 public class YJSpringBootProjectApplication {
 

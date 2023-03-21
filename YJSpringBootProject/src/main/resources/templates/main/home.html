@@ -48,34 +48,35 @@
         </article>
       </li>
     </ul>
+    
     <!-- ################################################################################################ -->
-    <h2 class="sectiontitle">제주 인기 호텔</h2>
+    <b class="sectiontitle" style="font-size: 25px">제주 인기 호텔</b>
     <!-- ################################################################################################ -->
     <div class="flexslider carousel basiccarousel btmspace-80">
       <ul class="slides">
-        <li th:each="vo:${sList}" >
-          <figure><img class="radius-10 btmspace-10" th:src="${vo.hotel_image}" style="height:250px; width:100%">
-            <figcaption><a href="#" th:text="${vo.name}"></a></figcaption>
+        <li th:each="svo:${sList}" >
+          <figure><a th:href="@{/hotel/hotel_detail(hno=${svo.hno})}"><img class="radius-10 btmspace-10" th:src="${svo.hotel_image}" style="height:200px; width:100%"></a>
+            <figcaption><a th:href="@{/hotel/hotel_detail(hno=${svo.hno})}" th:text="${svo.name}"></a></figcaption>
           </figure>
         </li>
       </ul>
     </div>
     
-    <h2 class="sectiontitle">제주 인기 명소</h2>
+    <b class="sectiontitle" style="font-size: 25px">제주 인기 명소</b>
     <!-- ################################################################################################ -->
     <div class="flexslider carousel basiccarousel btmspace-80">
       <ul class="slides">
-        <!-- <li th:each="vo:${list}" th:if="${vo.cno>=13 && vo.cno<=18}">
-          <figure><img class="radius-10 btmspace-10" th:src="${vo.poster}">
-            <figcaption><a th:href="@{/food/food_list(cno=${vo.cno})}" th:text="${vo.title}"></a></figcaption>
+        <li th:each="lvo:${lList}" >
+          <figure><a th:href="@{/location/location_detail(no=${lvo.no})}"><img class="radius-10 btmspace-10" th:src="${lvo.poster}" style="height:200px; width:100%"></a>
+            <figcaption><a th:href="@{/location/location_detail(no=${lvo.no})}" th:text="${lvo.title}"></a></figcaption>
           </figure>
-        </li> -->
+        </li>
       </ul>
     </div>
     
     
     <!-- ################################################################################################ -->
-    <h2 class="sectiontitle">최신방문 맛집/여행</h2>
+    <b class="sectiontitle" style="font-size: 25px">최신방문 맛집/여행</b>
     <!-- ################################################################################################ -->
     <ul class="nospace group">
       <li class="one_half first">

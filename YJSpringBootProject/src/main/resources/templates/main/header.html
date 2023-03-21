@@ -24,14 +24,14 @@
   <nav id="mainav" class="clear"> 
     <ul class="clear">
       <li class="active"><a th:href="@{/}">Home</a></li>
-      <li><a class="drop" href="@{food/find}">제주 호텔</a>
+      <li><a class="drop" th:href="@{/hotel/hotel_list}">제주 호텔</a>
         <ul>
-           <li><a th:href="@{/food/food_find}">인기 호텔</a></li>
+           <li><a th:href="@{/hotel/hotel_popular}">인기 호텔</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">제주 명소</a>
         <ul>
-          <li><a href="pages/gallery.html">제주 명소</a></li>
+          <li><a th:href="@{/location/location_find}">제주 명소 검색</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">제주 맛집</a>
@@ -39,7 +39,7 @@
           <li><a href="pages/gallery.html">맛집 검색</a></li>
         </ul>
       </li>
-      <li><a href="#">커뮤니티</a></li>
+      <li><a th:href="@{/board/board_list}">커뮤니티</a></li>
     </ul>
      </nav>
 </div>

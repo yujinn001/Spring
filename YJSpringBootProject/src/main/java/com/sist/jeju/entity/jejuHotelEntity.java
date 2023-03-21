@@ -30,5 +30,6 @@ public class jejuHotelEntity {
 	
 	private String grade,name,addr,intro,time,hotel_image;
 	private int all_cate_no,h_crawl_no,account,like_count,jjim_count;
+	private double star;
 	
 }
