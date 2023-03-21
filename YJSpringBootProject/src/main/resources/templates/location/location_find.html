@@ -15,10 +15,13 @@
            <figure>
              <header class="heading" >
                <form method="post" action="/location/location_find" class="inline">
-                <input type=text name=address size=20 class="input-sm">
-                <input type=submit value="검색" class="btn btn-sm btn-primary">
+                <div class="button1">
+                	<input type=text name=addr size=20 class="input-sm" >
+                	<input type=submit value="검색" class="btn btn-sm" style="background-color: #B9E0FD">
+                </div>
                </form>
              </header>
+             <div style="height:20px"></div>
              <ul class="nospace clear">
                <li th:each="vo,i:${list}" th:class="${i.index%4==0}?'one_quarter first':'one_quarter'"><a th:href="@{/location/location_detail(no=${vo.no})}"><img th:src="${vo.poster}" th:title="${vo.title}"></a></li>
              </ul>

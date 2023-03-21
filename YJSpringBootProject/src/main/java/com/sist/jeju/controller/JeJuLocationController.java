@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.jeju.dao.JejuLocationDAO;
@@ -19,10 +20,10 @@ public class JeJuLocationController {
 	@Autowired
 	private JejuLocationDAO dao;
 
-	@GetMapping("location_find")
+	@RequestMapping("location_find")
 	public String location_list(String addr, String page, Model model) {
 		if (addr == null)
-			addr = "서귀포시";
+			addr = "제주시";
 
 		if (page == null)
 			page = "1";

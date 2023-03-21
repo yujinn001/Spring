@@ -18,7 +18,10 @@
    <div style="height: 10px"></div>
    <table class="table">
     <tr>
-      <td width=20% class="text-center" colspan="2"><h3 th:text="${vo.title}" style="display:inline;float:left"></h3>&nbsp;<h3 style="color:orange;display:inline;float:left" th:text="${vo.content}"></h3></td>
+      <td width=20% class="text-center" colspan="2">
+      	<h3 th:text="${vo.title}" ></h3>&nbsp;
+      	<sub style="color:blue;font-size: 10px" th:text="${vo.content}"></sub>
+      </td>
     </tr>
     <tr>
      <th width=20% class="text-center">주소</th>
@@ -30,7 +33,7 @@
     </tr>
     <tr>
      <td colspan="2" class="text-right">
-      <input type="button" class="btn btn-sm btn-danger" value="목록" 
+      <input type="button" class="btn btn-sm " style="background-color: #B9E0FD" value="목록" 
               onclick="javascript:history.back()">
      </td>
     </tr>
