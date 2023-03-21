@@ -24,9 +24,9 @@
   <nav id="mainav" class="clear"> 
     <ul class="clear">
       <li class="active"><a th:href="@{/}">Home</a></li>
-      <li><a class="drop" th:href="@{food/find}">서울맛집</a>
+      <li><a class="drop" href="@{food/find}">서울맛집</a>
         <ul>
-          <li><a href="pages/gallery.html">맛집 검색</a></li>
+           <li><a th:href="@{/food/food_find}">맛집 검색</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">제주맛집</a>
@@ -42,7 +42,7 @@
           <li><a href="pages/gallery.html">쇼핑</a></li>
         </ul>
       </li>
-      <li><a href="#">커뮤니티</a></li>
+      <li><a th:href="@{/board/board_list}">커뮤니티</a></li>
     </ul>
      </nav>
 </div>

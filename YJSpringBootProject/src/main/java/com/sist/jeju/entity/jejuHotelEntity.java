@@ -24,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity(name="JJ_HOTEL") // 3차 테이블명 JJ_HOTEL
-public class jejuEntity {
+public class jejuHotelEntity {
 	@Id
 	private int hno;
 	

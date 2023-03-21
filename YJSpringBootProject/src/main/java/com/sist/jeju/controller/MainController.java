@@ -10,17 +10,18 @@ import com.sist.jeju.entity.*;
 import com.sist.jeju.dao.*;
 
 @Controller
-public class jejuController {
+public class MainController {
 	@Autowired
 	private JejuDAO dao;
 	
-	@GetMapping("/main")
+	@GetMapping("/")
 	public String jeju_main(Model model)
 	{
-		List<jejuEntity> list=dao.jejucategoryListData();
+		List<jejuHotelEntity> sList=dao.jejuStarListData();
+		List<jejuHotelEntity> list=dao.jejucategoryListData();
 		
 		
-		for(jejuEntity vo:list )
+		for(jejuHotelEntity vo:list )
 		{
 			String name=vo.getName();
 			if(name.length()>7) {
@@ -29,17 +30,23 @@ public class jejuController {
 			}
 			vo.setName(name);
 		}
+		model.addAttribute("sList",sList);
 		model.addAttribute("list",list);
-		model.addAttribute("main_content","main/home");
+		model.addAttribute("main_html","main/home");
 		return "main";
 	}
+	
+	
+	
+	
+	
 	@GetMapping("/jeju/main") // 제주 확인용
 	public String jeju_list(Model model)
 	{
-		List<jejuEntity> list=dao.jejucategoryListData();
+		List<jejuHotelEntity> list=dao.jejucategoryListData();
 		
 		
-		for(jejuEntity vo:list )
+		for(jejuHotelEntity vo:list )
 		{
 			String name=vo.getName();
 			if(name.length()>7) {

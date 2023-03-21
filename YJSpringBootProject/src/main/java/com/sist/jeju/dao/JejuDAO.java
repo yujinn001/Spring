@@ -23,10 +23,17 @@ LIKE_COUNT           NUMBER
 JJIM_COUNT           NUMBER 
  */
 @Repository
-public interface JejuDAO extends JpaRepository<jejuEntity,Integer>{
-	public jejuEntity findByHno(@Param("hno") Integer hno);
+public interface JejuDAO extends JpaRepository<jejuHotelEntity,Integer>{
+	@Query(value="select * "
+		       + "from JJ_HOTEL "
+		       + " where star>=4.9 order by star desc",nativeQuery = true)
+	public List<jejuHotelEntity> jejuStarListData();
+	
+	
+	// 5성급, 4성급, 3성급 출력
+	//public jejuEntity findByHno(@Param("hno") Integer hno);
 	@Query(value="select * "
 		       + "from JJ_HOTEL "
 		       + "where grade IN ('5성급','4성급','3성급') order by star",nativeQuery = true)
-	public List<jejuEntity> jejucategoryListData();
+	public List<jejuHotelEntity> jejucategoryListData();
 }
