@@ -228,7 +228,7 @@ td{border-width:0 1px;}
 --------------------------------------------------------------------------------------------------------------- */
 body{color:#B4B4B4; background-color:#232323;}
 
-a{color:#B9E0FD;}
+a{color:#0055FF;}
 
 hr, .borderedbox{border-color:#D7D7D7;}
 
@@ -237,53 +237,53 @@ label span{color:#FF0000; background-color:inherit;}
 
 /* Rows */
 .row1, .row1 a{color:#888888; background-color:#FFFFFF;}
-.row1{border-color:#B9E0FD;}
+.row1{border-color:#0055FF;}
 .row2{color:#888888; background-color:#FFFFFF;}
 .row3{color:#888888; background-color:#F2F2F2;}
-.row4{color:#B4B4B4; background-color:#232323; border-color:#B9E0FD;}
+.row4{color:#B4B4B4; background-color:#232323; border-color:#0055FF;}
 .row5, .row5 a{color:#B4B4B4; background-color:#232323;}
 .row5{border-color:#3C3C3C;}
 
 
 /* Header */
-#header #logo h1::first-letter{color:#B9E0FD;}
+#header #logo h1::first-letter{color:#0055FF;}
 
 
 /* Content Area */
 .sectiontitle{border-color:#D7D7D7;}
-.sectiontitle::after{background-color:#B9E0FD;}
+.sectiontitle::after{background-color:#0055FF;}
 
 .service .icon{border-color:#D7D7D7;}
-.service:hover .icon{color:#FFFFFF; background-color:#B9E0FD; border-color:#B9E0FD;}
+.service:hover .icon{color:#FFFFFF; background-color:#0055FF; border-color:#0055FF;}
 
 
 /* Footer */
 #footer .shout .shout-content, #footer .shout .shout-content:hover{color:inherit; background-color:#3C3C3C;}
 #footer .title{color:#FFFFFF; border-color:#3C3C3C;}
 #footer input{color:#FFFFFF; background-color:#3C3C3C;}
-#footer button{color:#FFFFFF; background-color:#B9E0FD;}
+#footer button{color:#FFFFFF; background-color:#0055FF;}
 
 
 /*Back to Top*/
-#backtotop{color:#FFFFFF; background-color:#B9E0FD;}
+#backtotop{color:#FFFFFF; background-color:#0055FF;}
 
 
 /* Navigation */
 #mainav{color:#FFFFFF; background-color:#232323;}
 #mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:inherit; background-color:#B9E0FD;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:inherit; background-color:#0055FF;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(0,0,0,.6); border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#B9E0FD;}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#0055FF;}
 
 #mainav form{padding:15px;}
 #mainav form select{color:inherit; background-color:inherit; border-color:#3C3C3C;}
 
 #breadcrumb{border-color:#D7D7D7;}
 #breadcrumb a{color:#888888; background-color:inherit;}
-#breadcrumb li:last-child a{color:#B9E0FD;}
+#breadcrumb li:last-child a{color:#0055FF;}
 
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
-.container .sidebar nav a:hover{color:#B9E0FD;}
+.container .sidebar nav a:hover{color:#0055FF;}
 
 .pagination a, .pagination strong{border-color:#D7D7D7;}
 .pagination .current{color:#FFFFFF; background-color:#000000;}

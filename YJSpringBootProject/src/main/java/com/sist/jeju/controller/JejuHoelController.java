@@ -17,7 +17,7 @@ public class JejuHoelController {
 	private JejuHotelDAO dao;
 	
 	@GetMapping("hotel_list")
-	public String hotel_lisr(String page,Model model)
+	public String hotel_list(String page,Model model)
 	{
 		if(page==null)
 	 		   page="1";
