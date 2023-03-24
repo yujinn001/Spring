@@ -17,4 +17,6 @@ public interface JejuLocationDAO extends JpaRepository<JejuLocationEntity,Intege
 	
 	@Query(value="select ceil(count(*)/20.0) from jeju_location",nativeQuery=true)
 	public int jejuLocationTotalPage();
+	
+	
 }

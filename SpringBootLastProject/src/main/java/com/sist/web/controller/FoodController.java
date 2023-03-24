@@ -20,6 +20,22 @@ public class FoodController {
 	@Autowired
 	private FoodDAO fDao;
 	
+	@GetMapping("food/food_top3")
+	public List<FoodEntity> food_top3() 
+	{
+		List<FoodEntity> list=fDao.FoodTop3Data();
+		for(FoodEntity vo:list)
+		{
+			String addr=vo.getAddress();
+			
+			if(addr.length()>25)
+			{
+				addr=addr.substring(0,25);
+				vo.setAddress(addr+"...");
+			}
+		}
+		return list;
+	}
 	@GetMapping("food/food_top6")
 	public List<FoodEntity> food_top6() 
 	{

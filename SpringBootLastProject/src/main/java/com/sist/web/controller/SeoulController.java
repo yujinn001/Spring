@@ -59,4 +59,21 @@ public class SeoulController {
 		
 		return vo;
 	}
+	
+	@GetMapping("seoul/location_top3")
+	public List<SeoulLocationEntity> food_top3() 
+	{
+		List<SeoulLocationEntity> list=lDao.locationTop3Data();
+		for(SeoulLocationEntity vo:list)
+		{
+			String addr=vo.getAddress();
+			
+			if(addr.length()>25)
+			{
+				addr=addr.substring(0,25);
+				vo.setAddress(addr+"...");
+			}
+		}
+		return list;
+	}
 }

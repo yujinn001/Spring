@@ -2,6 +2,7 @@ package com.sist.web.dao;
 
 import org.springframework.stereotype.Repository;
 
+import com.sist.web.entity.JejuLocationEntity;
 import com.sist.web.entity.SeoulLocationEntity;
 
 import java.util.List;
@@ -20,4 +21,8 @@ public interface SeoulLocationDAO extends JpaRepository<SeoulLocationEntity,Inte
 	public int seoulLocationTotalPage();
 	
 	public SeoulLocationEntity findByNo(@Param("no") Integer no);
+	
+	@Query(value="select * from seoul_location "
+			 + "limit 0,3",nativeQuery=true)
+		public List<SeoulLocationEntity> locationTop3Data();
 }

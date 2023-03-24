@@ -13,6 +13,10 @@ import com.sist.web.entity.JejuFoodEntity;
 @Repository
 public interface FoodDAO extends JpaRepository<FoodEntity,Integer>{
 	@Query(value="select * from project_food "
+			 + "limit 0,3",nativeQuery=true)
+		public List<FoodEntity> FoodTop3Data();
+	
+	@Query(value="select * from project_food "
 			 + "limit 0,6",nativeQuery=true)
 		public List<FoodEntity> FoodTop6Data();
 	
