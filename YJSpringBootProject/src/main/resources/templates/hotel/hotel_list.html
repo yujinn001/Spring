@@ -18,12 +18,12 @@
       
         <table class="table" th:each="vo:${list}"  >
           <tr>
-           <td class="text-center" width="30%" rowspan="4">
-           <a th:href="@{/hotel/hotel_detail(hno=${vo.hno})}">
+           <td class="text-center" width="30%" rowspan="4"><!-- hotel/hotel_detail -->
+           <a th:href="@{/hotel/hotel_detail_before(hno=${vo.hno})}">
              <img th:src="${vo.hotel_image}" style="width:400px;height: 150px" class="img-rounded">
            </a>
-           </td>
-           <td width=70%><a th:href="@{/hotel/hotel_detail(hno=${vo.hno})}"><span th:text="${vo.name}"></span></a>&nbsp;<span style="color:orange" th:text="${vo.star}"></span></td>
+           </td>  <!-- hotel/hotel_detail_before -->
+           <td width=70%><a th:href="@{/hotel/hotel_detail_before(hno=${vo.hno})}"><span th:text="${vo.name}"></span></a>&nbsp;<span style="color:orange" th:text="${vo.star}"></span></td>
           </tr>
           <tr>
            <td width="70%" th:text="${vo.grade}"></td>
